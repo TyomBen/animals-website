@@ -1,0 +1,34 @@
+.header-logo {
+    width: 47.64px;
+    height: 60px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.nav {
+    width: 1200px;
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-family: "Alumatica",sans-serif;
+    align-items: center;
+}
+
+.header-links-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 25px;
+    padding-top: 10px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

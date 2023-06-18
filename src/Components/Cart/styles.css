@@ -1,0 +1,17 @@
+.data-container {
+    width: 1090px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,250px);
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.spin-container {
+    display: flex;
+    justify-content: center;
+    margin: 300px 0px 0px  500px;
+}
+
+.reverse-main {
+    background-color: rgba(49,33,127,.58);
+}

@@ -1,0 +1,144 @@
+.img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 15px 15px 0 0;
+    margin-top: 40px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #021973;
+    margin-bottom: 10px;
+    font-family: "Alumatica",sans-serif;
+}
+
+.data-info-container {
+    width: 250px;
+    height: 216px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: inline-block;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+.samestyle {
+    padding: 0px 0px 0px 20px;
+}
+
+.color-styles {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 105px;
+}
+
+.info-name-style {
+    font-weight: 500;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 25px;
+    background-color: #bec8f4;
+    justify-content: center;
+    border: none;
+    height: 40px;
+    width: 210px;
+    cursor: pointer;
+    font-size: inherit;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.btn:hover {
+    background-color: #565FF4;
+    color: white;
+}
+
+.favourite-item {
+    border-radius: 0 15px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    background-color: #021973;
+    cursor: pointer;
+}
+
+.display-none-or-yep {
+    display: none;
+}
+
+.add-carting-window {
+    width: 80%;
+    max-width: 500px;
+    position: absolute;
+    z-index: 21;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: fixed;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px 1px rgba(72,62,121,.6);
+    padding-bottom: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.add-carting-text-container {
+    font-size: 14px;
+    text-align: center;
+    background-color: #a795ff;;
+    border-bottom:#BE5FF4 1px solid;
+}
+
+.p {
+    text-align: center;
+    padding: 10px;
+    line-height: 25px;
+}
+
+.action-buttons-style {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background-color: #bec8f4;
+    padding: 15px;
+    border-radius: 15px;
+    color: #000;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.button:hover {
+    background-color: #565FF4;
+    color: white;
+}

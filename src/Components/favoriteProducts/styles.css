@@ -1,0 +1,117 @@
+.products {
+    margin-bottom: 40px;
+    font-family: "Alumatica",sans-serif;
+    color: #667ad1;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 1200px;
+    padding: 30px 0;
+}
+
+.item-description-block {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.items-container {
+    display: flex;
+    gap: 85px;
+    padding-left: 50px;
+}
+
+span {
+    font-size: 17px;
+}
+
+hr {
+    margin-top: 40px;
+}
+
+.currentItems {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+    row-gap: 30px;
+    grid-area: list;
+    margin-bottom: 60px;
+}
+
+.current-image {
+    width: 110px;
+    max-width: 100%;
+    height: 110px;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+    border-radius: 15px;
+    display: block;
+}
+
+.current-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 18.72px;
+    width: 161.22px;
+}
+
+.current-color {
+    margin-bottom: 10px;
+}
+
+.no-items-text {
+    color: #667ad1;
+    font-weight: 500;
+    font-family: "Alumatica",sans-serif;
+    font-size: 20px;
+    width: 1200px;
+    margin: 0 auto
+};
+
+
+
+.same-style-increment {
+    width: 30px;
+    height: 30px;
+    background-color: #bec8f4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.same-style-decrement {
+    width: 30px;
+    height: 30px;
+    background-color: #bec8f4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.same-style-decrement:hover {
+    background-color: #565FF4;
+    color: white;
+}
+
+.all-items-container {
+     display: grid;
+    grid-template-columns: 120px 1.5fr repeat(5,1fr) 50px;
+    grid-column-gap: 2%;
+    -webkit-column-gap: 2%;
+    column-gap: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px hsla(0,0%,82%,.49);
+    min-height: 80px;
+    align-items: center;
+    text-align: center;
+    width: 756.25px;
+    margin-top: 55px; 
+    height: 140px;
+}
