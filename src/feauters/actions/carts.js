@@ -7,7 +7,7 @@ export const gettingData = createAsyncThunk (
     'carts/gettingData',
     async (_, thunkAPI) => {
         try {
-            const response = await axios (URL);
+            const response = await axios (`${URL}cardsList.json`);
             return response.data
         }catch (eror) {
             console.log(eror);

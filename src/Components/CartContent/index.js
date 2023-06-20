@@ -1,10 +1,11 @@
 import './styles.css' 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { handleItemAdd } from '../../feauters/slices/cartsSlices';
+import { handleItemAdd, handleAddFavouriteItem } from '../../feauters/slices/cartsSlices';
+import { getCartFromLS } from '../../getItemLS';
 const CartContent = ({datas, index}) => {
-    const { initialValue } = useSelector (({carts}) => carts);
-    const [state, setState] = useState (true)
+    const { initialValue, newfilterData, newArray} = useSelector (({carts}) => carts);
+    const [state, setState] = useState (true);
     const dispatch = useDispatch()     
     const {title, price, articul, color, imgSrc} = datas;
     const handleAddOrCancelClick = () => {
@@ -14,11 +15,15 @@ const CartContent = ({datas, index}) => {
         dispatch (handleItemAdd(articul))
         setState (!state)
     }
+      
+    const handleAddFavouriteItemAndRouting = () => {
+        dispatch (handleAddFavouriteItem(articul))
+    }
     return (
                <section>
             <img src = {`https://online-shop-react.vercel.app/${imgSrc}`} className="img" alt="Coming Soon" />
             <div className="data-info-container">
-                <button className = "favourite-item"></button>
+                <button className = "favourite-item" onClick={handleAddFavouriteItemAndRouting}></button>
                 <h2 className="title samestyle">{title}</h2>
                  <span className="samestyle info-name-style">Color: {color}</span>
                 <div style={{backgroundColor : `${color}`}} className="color-styles"></div>
@@ -26,7 +31,6 @@ const CartContent = ({datas, index}) => {
                 <p className="samestyle info-name-style price-style">{price} UAH</p>
                 <div className="button-container">
                 <button className="btn" onClick = {handleAddOrCancelClick}>Add to cart</button>
-                <p>{initialValue}</p>
                 </div>
             </div> 
             <article className = {state ? 'display-none-or-yep' : ''}>

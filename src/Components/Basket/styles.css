@@ -1,0 +1,241 @@
+.products {
+    margin-bottom: 40px;
+    font-family: "Alumatica",sans-serif;
+    color: #667ad1;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 1200px;
+    padding: 30px 0;
+}
+
+.item-description-block {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    background-color: #a795ff;
+    border-radius: 15px;
+    color: #000;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.delete-btn:hover {
+    background-color: #565FF4;
+    color: white;
+}
+
+.items-container {
+    display: flex;
+    gap: 85px;
+    padding-left: 50px;
+}
+
+span {
+    font-size: 17px;
+}
+
+hr {
+    margin-top: 40px;
+}
+
+.promo-code {
+    border: 1px solid rgba(88,110,206,.14901960784313725);
+    border-radius: 25px;
+    padding: 10px 15px;
+    width: 91%;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    width: 344.81px;
+}
+
+.btn-promo {
+    background: none;
+    border: none;
+    background-color: #a795ff;
+    border-radius: 15px;
+    color: #000;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+    width: 100px;
+    height: 40px;
+}
+
+.btn-promo:hover {
+    background-color: #565FF4;
+    color: white;
+}
+
+.promo-clue {
+    width: 230px;
+    height: 60px;
+    background-color: white;
+    z-index: 10;
+    position: absolute;
+    font-family: "Alumatica",sans-serif;
+    font-weight: 700;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.order-total {
+    color: #565FF4;
+}
+
+.random-promo {
+    color: white;
+}
+.hide-random-promo {
+    display: none;
+}
+
+.total-all-prices {
+    background-color: rgba(211,205,249,.30196078431372547);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px 1px #f3f2fd;
+    width: 343.75px;
+    height: 185px;
+    margin-top: 30px;
+}
+
+.all-orders-totals {
+    font-weight: bold;
+}
+
+.promo-div {
+    background-color: #3f3456;
+    padding: 15px;
+    height: 220px;
+    border-radius: 15px;
+    position: relative;
+    width: 343.75px;
+}
+
+.currentItems {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+    row-gap: 30px;
+    grid-area: list;
+    margin-bottom: 60px;
+}
+
+.all-items-in-basket {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    grid-template-areas:
+        "listTitles totalBlock"
+        "list totalBlock"
+        "orderForm totalBlock";
+    grid-column-gap: 100px;
+    -webkit-column-gap: 100px;
+    column-gap: 100px;
+    grid-row-gap: 20px;
+    row-gap: 20px;
+}
+
+.current-image {
+    width: 110px;
+    max-width: 100%;
+    height: 110px;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+    border-radius: 15px;
+    display: block;
+}
+
+.current-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 18.72px;
+    width: 161.22px;
+}
+
+.current-color {
+    margin-bottom: 10px;
+}
+
+.no-items-text {
+    color: #667ad1;
+    font-weight: 500;
+    font-family: "Alumatica",sans-serif;
+    font-size: 20px;
+    width: 1200px;
+    margin: 0 auto
+};
+
+
+
+.same-style-increment {
+    width: 30px;
+    height: 30px;
+    background-color: #bec8f4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.same-style-decrement {
+    width: 30px;
+    height: 30px;
+    background-color: #bec8f4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.same-style-decrement:hover {
+    background-color: #565FF4;
+    color: white;
+}
+
+.all-items-container {
+     display: grid;
+    grid-template-columns: 120px 1.5fr repeat(5,1fr) 50px;
+    grid-column-gap: 2%;
+    -webkit-column-gap: 2%;
+    column-gap: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px hsla(0,0%,82%,.49);
+    min-height: 80px;
+    align-items: center;
+    text-align: center;
+    width: 756.25px;
+    margin-top: 55px; 
+    height: 140px;
+}
+
+.promo {
+    font-family: "Alumatica",sans-serif;
+    color: #667ad1;
+    font-weight: 700;
+    margin-top: 0;
+}

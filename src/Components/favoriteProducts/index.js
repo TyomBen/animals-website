@@ -1,67 +1,78 @@
 import { useDispatch, useSelector } from "react-redux";
-import Header from "../Header";
 import './styles.css'
-import React, { useState } from "react";
-import { handleCountIcrement, handleCountDecrement } from "../../feauters/slices/cartsSlices";
-const FavoriteProducts = ({datas}) => {
-    const {maunt, newArray, newfilterData, count } = useSelector (({carts}) => carts);
+import Header from "../Header";
+import { useState } from "react";
+import { handleItemAdd, handleAddFavouriteItem,  deleteCurrentFavouriteItem } from "../../feauters/slices/cartsSlices";
+const FavoriteProducts = () => {
+    const {data, initialValue, mauntFavouriteCategory, newArrayfavouriteCategory  } = useSelector (({carts}) => carts)
+    const [state, setState] = useState (true)
     const dispatch = useDispatch ()
-    const handleClickCounterIcrement = () => {
-        dispatch (handleCountIcrement ())
+    const handleAddOrCancelClick = () => {
+        setState (!state)
+     }
+     const handleOkClick = (articul) => {
+        dispatch (handleItemAdd(articul))
+        setState (!state)
     }
-    const handleClickCounterDecrement = () => {
-        dispatch (handleCountDecrement ())
+
+    const handleAddFavouriteCurrentItemDelete = (articul) => {
+        dispatch (deleteCurrentFavouriteItem(articul))
     }
-    return newArray.length ? ( 
+    
+    return newArrayfavouriteCategory.length ? (
+        <>
+        <Header />
+        <h2 className = 'favourite-title'>Favorites - {mauntFavouriteCategory} items</h2>
         <section>
-              <Header />
-            <h2 className="products">1. Products - {maunt}</h2>
-            <div className="item-description-block">
-                <div className="items-container">
-                    <span> Photo </span>
-                    <span> Description </span>
-                    <span> Price </span>
-                    <span> Quantity </span>
-                    <span> Total </span> 
-                    </div>
-                    <hr /> 
-                    <div className="currentItems">
-                    {newArray.map (item => {
-                    const {articul, color, imgSrc, price, title} = item;
-                        return (
-                            <React.Fragment key={articul}>
-                                <div className="all-items-container">
-                                    <img src= {`https://online-shop-react.vercel.app/${imgSrc}`} className="current-image" />
-                            <div className="current-items-contanier">
-                               <h3 className="current-title">{title}</h3>
-                            <p className="current-color">Color: {color}</p> 
-                            <p>Articul: {articul}</p>
+        {
+            newArrayfavouriteCategory.map (currentItem => {
+                const {title, price, articul, color, imgSrc} = currentItem;
+                return (
+                  <>
+                  <div>
+                  <img src = {`https://online-shop-react.vercel.app/${imgSrc}`} className="img" alt="Coming Soon" />
+                  </div>
+                        
+                    <div className="data-info-container">
+                        <button className = "favourite-item" onClick={() => handleAddFavouriteCurrentItemDelete (articul)}></button>
+                        <h2 className="title samestyle">{title}</h2>
+                         <span className="samestyle info-name-style">Color: {color}</span>
+                        <div style={{backgroundColor : `${color}`}} className="color-styles"></div>
+                        <p className="samestyle info-name-style ">Articul: {articul}</p>
+                        <p className="samestyle info-name-style price-style">{price} UAH</p>
+                        <div className="button-container">
+                        <button className="btn" onClick = {handleAddOrCancelClick}>Add to cart</button>
+                        </div>
+                    </div> 
+                    <article className = {state ? 'display-none-or-yep' : ''}>
+                       <div className="add-carting-window">
+                            <div className="add-carting-text-container">
+                                <h2 className="add-carting-text">Do you want to add this product to your cart?</h2>  
                             </div>
-                            <p className="current-color">{price} UAH</p>
-                            <div className="same-style-decrement" onClick={handleClickCounterDecrement}>-</div>
-                            <p> {count} </p>
-                            <div onClick={handleClickCounterIcrement} className="same-style-increment" style={{backgroundColor : '#bec8f4', width : '30px', height : '30px', cursor : 'pointer', borderRadius : '50%'}}> + </div>
-                            <div>{price} UAH</div>  
-                                </div>
-                         
-                            </React.Fragment>
-                           
-                        ) 
-                   })}
-                  
-                    </div>
-            </div>
-        </section>
+                            <p className = "p">This item will be available in the cart</p>
+                            <div className="action-buttons-style">
+                            <button onClick={() => handleOkClick (articul)} className='button'>Ok</button> 
+                            <button onClick={handleAddOrCancelClick} className='button'>Cancel</button> 
+                            </div>
+                        </div>
+                        </article>
+                  </>
+              
+            
+                )
+           
+            })
+        }
+            </section>
+        </>
     ) : (
         <>
-            <Header />
-                <h2 className="products">1. Products - {maunt}</h2>
-                <p className="no-items-text">No items in cart</p>
-        
+        <Header />
+         <h2 className = 'favourite-title'>Favorites - {mauntFavouriteCategory} items</h2>
+        <p className="no-items-text">No items in favourites</p>
         </>
-    
+       
     )
 }
 
 export default FavoriteProducts;
-
