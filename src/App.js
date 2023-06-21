@@ -7,8 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {paths.map (({path, element, id}) => {return <Route path = {path} element = {element} key = {id} />
-        })}
+        {paths.map (({path, element, id}) => (
+           <Route path = {path} element = {element} key = {id} />
+        ))}
       </Routes>
     </BrowserRouter>
   );

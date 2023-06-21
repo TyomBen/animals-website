@@ -1,16 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { URL } from "../../Utills/constants";
-import { sleep } from "./helper";
+import { sleep } from "../../Utills/helper";
 
 export const gettingData = createAsyncThunk (
     'carts/gettingData',
     async (_, thunkAPI) => {
         try {
-            const response = await axios (`${URL}cardsList.json`);
+            const response = await axios (`${URL}`);
             return response.data
-        }catch (eror) {
-            console.log(eror);
+        }catch (error) {
+            console.log(error);
             return thunkAPI.rejectWithValue()
         }
     }

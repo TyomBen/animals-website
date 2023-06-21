@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { gettingData } from "../actions/carts";
-import { gettingLsBasket, gettingLsFavourite} from "../../getItemLS";
+import { gettingLsBasket, gettingLsFavourite} from "../../Components/getItemLS";
 const cartsSlice = createSlice ({
     name : 'carts',
     initialState : {
@@ -39,7 +39,6 @@ const cartsSlice = createSlice ({
         },
         handleCountDecrement (state, {payload}) {
             if (state.count > 1) {
-            
                  state.newArray.filter ((item) => {
                 if (item.articul === payload) {
                     state.total -= item.price

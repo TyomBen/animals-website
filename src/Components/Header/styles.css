@@ -1,8 +1,8 @@
 .header-logo {
-    width: 47.64px;
-    height: 60px;
-    border: 1px solid;
+    width: 170px;
+    height: 87px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .nav {
