@@ -10,7 +10,7 @@ const cartsSlice = createSlice ({
         errors : null,
         initialValue : '',
         maunt : 0,
-        count : 0,
+        count : 0, //1 
         mauntFavouriteCategory : 0,
         newfilterData : [],
         newArray : gettingLsBasket (),
@@ -25,13 +25,11 @@ const cartsSlice = createSlice ({
                 state.newfilterData = state.data.filter ((item) => item.articul === payload);
                 state.newArray.push (...state.newfilterData);
                 state.maunt = state.newArray.length;
-                state.newArray.filter (item => {
-                    // if (item.articul === payload) {
-                    //     state.total += item.price;
-                    //     state.count += 1
-                    //     localStorage.setItem('basket', JSON.stringify(state.count));
-                    // }
-                })
+                // state.newArray.filter (item => {
+                //     if (item.articul === payload) {
+                //         state.total += item.price;
+                //     }
+                // })
                 localStorage.setItem('basket', JSON.stringify(state.newArray));
             }
         },
