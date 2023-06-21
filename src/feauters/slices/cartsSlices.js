@@ -26,10 +26,11 @@ const cartsSlice = createSlice ({
                 state.newArray.push (...state.newfilterData);
                 state.maunt = state.newArray.length;
                 state.newArray.filter (item => {
-                    if (item.articul === payload) {
-                        state.total += item.price;
-                        state.count += 1
-                    }
+                    // if (item.articul === payload) {
+                    //     state.total += item.price;
+                    //     state.count += 1
+                    //     localStorage.setItem('basket', JSON.stringify(state.count));
+                    // }
                 })
                 localStorage.setItem('basket', JSON.stringify(state.newArray));
             }
@@ -74,7 +75,7 @@ const cartsSlice = createSlice ({
         },
         deleteCurrentFavouriteItem (state, {payload}) {
             state.newArrayfavouriteCategory = state.newArrayfavouriteCategory.filter ((item) => item.articul !== payload);
-            state.maunt = state.newArrayfavouriteCategory.length;
+            state.mauntFavouriteCategory = state.newArrayfavouriteCategory.length;
             localStorage.setItem('favourite', JSON.stringify(state.newArrayfavouriteCategory)); 
         }
 

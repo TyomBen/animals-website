@@ -23,31 +23,33 @@ const CurrentBusketCart = ({articul, color, imgSrc, price, title}) => {
      return (
         
     <div className="all-items-container">
-    <img src= {`https://online-shop-react.vercel.app/${imgSrc}`} className="current-image" />
-<div className="current-items-contanier">
-<h3 className="current-title">{title}</h3>
-<p className="current-color">Color: {color}</p> 
-<p>Articul: {articul}</p>
-</div>
-<p className="current-color">{price} UAH</p>
-<div className="same-style-decrement" onClick={() => handleClickCounterDecrement (articul)}>-</div>
-<p> {count} </p>
-<div onClick={() => handleClickCounterIcrement (articul)} className="same-style-increment" style={{backgroundColor : '#bec8f4', width : '30px', height : '30px', cursor : 'pointer', borderRadius : '50%'}}> + </div>
-<div>{total} UAH</div>  
-<button onClick={handleAddOrCancelClick} className="delete-btn">Clear</button>
-<article className = {state ? 'display-none-or-yep' : ''}>
-<div className="add-carting-window">
-<div className="add-carting-text-container">
-<h2 className="add-carting-text">Do you want to add this product to your cart?</h2>  
-</div>
-<p className = "p">This item will be available in the cart</p>
-<div className="action-buttons-style">
-<button onClick={() => handleDeleteCurrentItem(articul)} className='button'>Ok</button> 
-<button onClick={handleAddOrCancelClick} className='button'>Cancel</button> 
-</div>
-</div>
-</article>
-</div>
+    <img src= {`https://online-shop-react.vercel.app/${imgSrc}`} 
+    className="current-image" />
+    <div className="current-items-contanier">
+    <h3 className="current-title">{title}</h3>
+    <p className="current-color">Color: {color}</p> 
+    <p>Articul: {articul}</p>
+    </div>
+    <p className="current-color">{price} UAH</p>
+    <div className="same-style-decrement" onClick={() => handleClickCounterDecrement (articul)}>-</div>
+    <p> {count} </p>
+    <div onClick={() => handleClickCounterIcrement (articul)} className="same-style-increment" 
+    style={{backgroundColor : '#bec8f4', width : '30px', height : '30px', cursor : 'pointer', borderRadius : '50%'}}> + </div>
+    <div>{total} UAH</div>  
+    <button onClick={handleAddOrCancelClick} className="delete-btn">Clear</button>
+    <article className = {state ? 'display-none-or-yep' : ''}>
+    <div className="add-carting-window">
+    <div className="add-carting-text-container">
+    <h2 className="add-carting-text">Do you want to add this product to your cart?</h2>  
+    </div>
+    <p className = "p">This item will be available in the cart</p>
+    <div className="action-buttons-style">
+    <button onClick={() => handleDeleteCurrentItem(articul)} className='button'>Ok</button> 
+    <button onClick={handleAddOrCancelClick} className='button'>Cancel</button> 
+    </div>
+    </div>
+    </article>
+    </div>
      )
 }
 
