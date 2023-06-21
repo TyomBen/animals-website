@@ -5,21 +5,8 @@ import React, { useState } from "react";
 import { handleItemAdd, handleAddFavouriteItem,  deleteCurrentFavouriteItem } from "../../feauters/slices/cartsSlices";
 import CurrentFavouriteCart from "../CurrentFavouriteCart";
 const FavoriteProducts = () => {
-    const {data, initialValue, mauntFavouriteCategory, newArrayfavouriteCategory  } = useSelector (({carts}) => carts)
-    const [state, setState] = useState (true)
-    const dispatch = useDispatch ()
-    const handleAddOrCancelClick = () => {
-        setState (!state)
-     }
-     const handleOkClick = (articul) => {
-        dispatch (handleItemAdd(articul))
-        setState (!state)
-    }
+    const { mauntFavouriteCategory, newArrayfavouriteCategory } = useSelector (({carts}) => carts)
 
-    const handleAddFavouriteCurrentItemDelete = (articul) => {
-        dispatch (deleteCurrentFavouriteItem(articul))
-    }
-    
     return newArrayfavouriteCategory.length ? (
         <>
         <Header />
@@ -32,9 +19,7 @@ const FavoriteProducts = () => {
                   <React.Fragment key={articul}>
                  <CurrentFavouriteCart title = {title} price = {price} articul = {articul} color = {color} imgSrc = {imgSrc} />
                   </React.Fragment>
-              
                 )
-           
             })
         }
             </section>

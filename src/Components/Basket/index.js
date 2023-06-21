@@ -3,7 +3,7 @@ import Header from "../Header";
 import './styles.css'
 import React, { useState } from "react";
 import { handleCountIcrement, handleCountDecrement, deleteCurrentItem } from "../../feauters/slices/cartsSlices";
-import CurrentCart from "../CurrentBasketCart";
+import CurrentBusketCart from "../CurrentBasketCart";
 const Basket = ({datas}) => {
     const { maunt, newArray } = useSelector (({carts}) => carts);
     const [state, setState] = useState (true)
@@ -25,7 +25,7 @@ const Basket = ({datas}) => {
                     const {articul, color, imgSrc, price, title} = item;
                         return (
                             <React.Fragment key={articul}>
-                                <CurrentCart articul={articul} color={color} imgSrc={imgSrc} price={price} title={title} />
+                                <CurrentBusketCart articul={articul} color={color} imgSrc={imgSrc} price={price} title={title} />
                             </React.Fragment>
                         ) 
                    })}

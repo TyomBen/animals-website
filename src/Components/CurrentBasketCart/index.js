@@ -1,7 +1,7 @@
 import { handleCountIcrement, handleCountDecrement, deleteCurrentItem } from "../../feauters/slices/cartsSlices";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-const CurrentCart = ({articul, color, imgSrc, price, title}) => {
+const CurrentBusketCart = ({articul, color, imgSrc, price, title}) => {
     const [state, setState] = useState (true);
     const { count, total } = useSelector (({carts}) => carts);
     const dispatch = useDispatch ()
@@ -51,4 +51,4 @@ const CurrentCart = ({articul, color, imgSrc, price, title}) => {
      )
 }
 
-export default CurrentCart;
+export default CurrentBusketCart;

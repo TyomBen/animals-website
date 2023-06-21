@@ -2,7 +2,6 @@ import './styles.css'
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { handleItemAdd, handleAddFavouriteItem } from '../../feauters/slices/cartsSlices';
-import { getCartFromLS } from '../getItemLS';
 const CartContent = ({datas, index}) => {
     const { initialValue, newfilterData, newArray} = useSelector (({carts}) => carts);
     const [state, setState] = useState (true);

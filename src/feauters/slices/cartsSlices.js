@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { gettingData } from "../actions/carts";
-import { gettingLsBasket, gettingLsFavourite} from "../../Components/getItemLS";
+import { gettingLsBasket, gettingLsFavourite } from "../../Components/getItemLS";
 const cartsSlice = createSlice ({
     name : 'carts',
     initialState : {
@@ -25,6 +25,12 @@ const cartsSlice = createSlice ({
                 state.newfilterData = state.data.filter ((item) => item.articul === payload);
                 state.newArray.push (...state.newfilterData);
                 state.maunt = state.newArray.length;
+                state.newArray.filter (item => {
+                    if (item.articul === payload) {
+                        state.total += item.price;
+                        state.count += 1
+                    }
+                })
                 localStorage.setItem('basket', JSON.stringify(state.newArray));
             }
         },
@@ -33,6 +39,9 @@ const cartsSlice = createSlice ({
                     if (item.articul === payload) {
                         state.total += item.price
                         state.count += 1
+                        console.log('ok');
+                    }else {
+                        console.log('not');
                     }
                 })
           
