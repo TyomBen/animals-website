@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { URL } from "../../Utills/constants";
-import { sleep } from "../../Utills/helper";
 
 export const gettingData = createAsyncThunk (
     'carts/gettingData',

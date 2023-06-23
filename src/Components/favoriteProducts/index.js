@@ -1,8 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import './styles.css'
 import Header from "../Header";
-import React, { useState } from "react";
-import { handleItemAdd, handleAddFavouriteItem,  deleteCurrentFavouriteItem } from "../../feauters/slices/cartsSlices";
 import CurrentFavouriteCart from "../CurrentFavouriteCart";
 const FavoriteProducts = () => {
     const { mauntFavouriteCategory, newArrayfavouriteCategory } = useSelector (({carts}) => carts)
@@ -16,9 +14,9 @@ const FavoriteProducts = () => {
             newArrayfavouriteCategory.map (currentItem => {
                 const {title, price, articul, color, imgSrc} = currentItem;
                 return (
-                  <React.Fragment key={articul}>
+                  <div key={articul}>
                  <CurrentFavouriteCart title = {title} price = {price} articul = {articul} color = {color} imgSrc = {imgSrc} />
-                  </React.Fragment>
+                  </div>
                 )
             })
         }

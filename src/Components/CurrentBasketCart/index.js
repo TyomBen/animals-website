@@ -1,6 +1,7 @@
 import { handleCountIcrement, handleCountDecrement, deleteCurrentItem } from "../../feauters/slices/cartsSlices";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { imgURL } from "../../Utills/constants";
 const CurrentBusketCart = ({articul, color, imgSrc, price, title}) => {
     const [state, setState] = useState (true);
     const { count, total } = useSelector (({carts}) => carts);
@@ -23,7 +24,7 @@ const CurrentBusketCart = ({articul, color, imgSrc, price, title}) => {
      return (
         
     <div className="all-items-container">
-    <img src= {`https://online-shop-react.vercel.app/${imgSrc}`} 
+    <img src= {`${imgURL}/${imgSrc}`} 
     className="current-image" />
     <div className="current-items-contanier">
     <h3 className="current-title">{title}</h3>

@@ -1,10 +1,11 @@
 import "./styles.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   handleItemAdd,
   handleAddFavouriteItem,
 } from "../../feauters/slices/cartsSlices";
+import { imgURL } from "../../Utills/constants";
 const CartContent = ({ datas, index }) => {
   const { initialValue, newfilterData, newArray } = useSelector(
     ({ carts }) => carts
@@ -26,7 +27,7 @@ const CartContent = ({ datas, index }) => {
   return (
     <section>
       <img
-        src={`https://online-shop-react.vercel.app/${imgSrc}`}
+        src={`${imgURL}/${imgSrc}`}
         className="img"
         alt="Coming Soon"
       />

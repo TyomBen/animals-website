@@ -5,7 +5,7 @@ import CartContent from "../CartContent";
 import "./styles.css";
 import { Spin } from "antd";
 const Cart = () => {
-  const { data, isloading, initialValue } = useSelector(({ carts }) => carts);
+  const { data, isloading } = useSelector(({ carts }) => carts);
   const dispatch = useDispatch();
   useEffect(() => {
     try {

@@ -1,12 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Header from "../Header";
 import "./styles.css";
 import React, { useState } from "react";
-import {
-  handleCountIcrement,
-  handleCountDecrement,
-  deleteCurrentItem,
-} from "../../feauters/slices/cartsSlices";
+
 import CurrentBusketCart from "../CurrentBasketCart";
 const Basket = ({ datas }) => {
   const { maunt, newArray } = useSelector(({ carts }) => carts);

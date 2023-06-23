@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { handleItemAdd, deleteCurrentFavouriteItem } from "../../feauters/slices/cartsSlices";
+import { imgURL } from "../../Utills/constants";
 
 const CurrentFavouriteCart = ({title, price, articul, color, imgSrc}) => {
     const [state, setState] = useState (true)
@@ -20,7 +21,7 @@ const CurrentFavouriteCart = ({title, price, articul, color, imgSrc}) => {
     return (
         <>
          <div>
-        <img src = {`https://online-shop-react.vercel.app/${imgSrc}`} className="img" alt="Coming Soon" />
+        <img src = {`${imgURL}/${imgSrc}`} className="img" alt="Coming Soon" />
         </div>
               
           <div className="data-info-container">
